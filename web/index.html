@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CN Chat</title>
+    <style>
+      :root { --border:#e5e7eb; --bg:#fafafa; --card:#ffffff; --text:#111827; }
+      * { box-sizing: border-box; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; }
+      body { margin:0; background: var(--bg); color:var(--text); }
+      .container { max-width: 1000px; margin: 0 auto; padding: 16px; }
+      .card { background: var(--card); border:1px solid var(--border); border-radius: 12px; padding: 16px; }
+      .row { display:flex; gap:12px; align-items:center; }
+      .col { display:flex; flex-direction:column; gap:8px; }
+      input, button, select { padding:10px; border:1px solid var(--border); border-radius:10px; }
+      button { cursor:pointer; }
+      .layout { display:grid; grid-template-columns: 280px 1fr; gap:12px; margin-top:12px; }
+      .list { height: 70vh; overflow:auto; border:1px solid var(--border); border-radius:10px; background:#fff; }
+      .chat { height: 70vh; display:flex; flex-direction:column; }
+      .msgs { flex:1; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:12px; background:#fff; }
+      .msg { margin-bottom:10px; }
+      .mine { text-align:right; }
+      .toolbar { display:flex; gap:8px; margin-top:8px; }
+      .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; background:#eef2ff; border:1px solid #c7d2fe; }
+      .muted { color:#6b7280; font-size:12px; }
+      .title { font-weight:700; margin: 0 0 8px 0; }
+      .link { color:#2563eb; text-decoration:none; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js"));
+      }
+    </script>
+  </body>
+</html>
