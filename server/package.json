@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+  "start": "node index.js",
   "dev": "node index.js",
   "prisma:generate": "prisma generate",
-  "prisma:migrate": "prisma migrate dev --name init"
+  "prisma:migrate:deploy": "prisma migrate deploy"
 },
+
 
   "keywords": [],
   "author": "",
